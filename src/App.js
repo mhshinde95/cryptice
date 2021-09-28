@@ -44,7 +44,7 @@ function App() {
             level={5}
             style={{ color: "white", textAlign: "center" }}
           >
-            Cryptoverse
+            Cryptice
             <br />
             All Rights Reserved
           </Typography.Title>

@@ -8,7 +8,7 @@ import {
   FundOutlined,
   MenuOutlined,
 } from "@ant-design/icons";
-import icon from "../images/cryptocurrency.png";
+import icon from "../images/cryptice_icon.png";
 
 function Navbar() {
   const [activeMenu, setActiveMenu] = useState(true);
@@ -32,9 +32,14 @@ function Navbar() {
   return (
     <div className="nav-container">
       <div className="logo-container">
-        <Avatar src={icon} size="large" />
+        <Link to="/">
+          <Avatar src={icon} size="large" />
+        </Link>
+
         <Typography.Title level={2} className="logo">
-          <Link to="/">Cryptoverse</Link>
+          <Link className="menu-text" to="/">
+            Cryptice
+          </Link>
         </Typography.Title>
         <Button
           className="menu-control-container"
@@ -45,20 +50,35 @@ function Navbar() {
       </div>
 
       {activeMenu && (
-        <Menu theme="dark">
+        <Menu theme="dark" style={{ backgroundColor: "#00E5E5" }}>
           <Menu.Item icon={<HomeOutlined />}>
-            <Link to="/">Home</Link>
+            <Link className="menu-text" to="/">
+              Home
+            </Link>
           </Menu.Item>
           <Menu.Item icon={<FundOutlined />}>
-            <Link to="/cryptocurrencies">Crypto Currencies</Link>
+            <Link className="menu-text" to="/cryptocurrencies">
+              Crypto Currencies
+            </Link>
           </Menu.Item>
           <Menu.Item icon={<MoneyCollectOutlined />}>
-            <Link to="/exchanges">Exchanges</Link>
+            <Link className="menu-text" to="/exchanges">
+              Exchanges
+            </Link>
           </Menu.Item>
           <Menu.Item icon={<BulbOutlined />}>
-            <Link to="/news">News</Link>
+            <Link className="menu-text" to="/news">
+              News
+            </Link>
           </Menu.Item>
         </Menu>
+      )}
+
+      {screenSize > 768 && (
+        <div className="bottom-content">
+          <div>Created by: Milind Shinde</div>
+          <div>Email: mhshinde95@gmail.com</div>
+        </div>
       )}
     </div>
   );

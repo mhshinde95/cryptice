@@ -13,7 +13,7 @@ function Homepage() {
   return (
     <>
       <Typography.Title level={2} className="heading">
-        Global Crypto Stats
+        Global Crypto Statistics
       </Typography.Title>
       <Row>
         <Col span={12}>
